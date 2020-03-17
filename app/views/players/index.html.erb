@@ -1,0 +1,31 @@
+<% content_for(:title, "Players") %>
+  
+
+<h1>There are <%= pluralize(@players.length, 'player') %></h1>
+
+<table>
+    <thead>
+        <tr>
+            <td><strong>First Name</strong></td>
+            <td><strong>Last Name</strong></td>
+            <td><strong>Action</strong></td>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% @players.each do |player| %>
+        <tr>
+            <td><%= player.first_name %></td>
+            <td><%= player.last_name %></td>
+            <td>
+                <%= link_to "Show", player %> |
+                <%= link_to "Edit", edit_player_path(player) %> |
+                <%= link_to "Delete", player, method: :delete, data:{ confirm: "Are you sure?"} %>
+            </td> 
+        </tr>
+        <% end %>
+    </tbody>
+</table>
+
+
+<%= link_to "New Player", new_player_path %>

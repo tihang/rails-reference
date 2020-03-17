@@ -1,0 +1,19 @@
+<%= form_with(model: player) do |f| %>
+    <%= f.label :first_name, "First Name: " %>
+    <%= f.text_field :first_name, class: "uk-input" %>
+    <br/>
+
+    <%= f.label :last_name, "Last Name: " %>
+    <%= f.text_field :last_name, class: "uk-input" %>
+    <br/>
+
+    <%= f.submit class: "uk-button uk-button-secondary" %>
+<% end %>
+
+<% if flash[:errors] %>
+    <% flash[:errors].each do |e| %>
+        <p><%= e %></p>
+    <% end %>
+<% end %>
+
+<br/>
