@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   # get "/players/new", to: "players#new"
   # post "/players", to: "players#create"
   # get "/players/:id", to: "players#show"
-  root to: "players#index"
+  root to: "users#index"
+  resources :users, only: [:index, :create]
+  resources :sessions, only: [:index, :create]
   resources :players
+
+  get "/logout", to: "sessions#destroy"
 end

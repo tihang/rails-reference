@@ -1,4 +1,4 @@
-<%= form_with(model: player) do |f| %>
+<%= form_with model: player, validate: true do |f| %>
     <%= f.label :first_name, "First Name: " %>
     <%= f.text_field :first_name, class: "uk-input" %>
     <br/>
