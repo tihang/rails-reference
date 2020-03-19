@@ -1,5 +1,6 @@
 class PlayersController < ApplicationController
     before_action :set_player, only: [:edit, :update, :show, :destroy]
+    before_action :require_login
 
     def index
         @players = Player.all

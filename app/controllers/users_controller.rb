@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     def create
         @user = User.new(user_params)
         if @user.save
-            session[:user] = user
+            session[:user] = @user.id
             redirect_to players_path
         else
             render :index
